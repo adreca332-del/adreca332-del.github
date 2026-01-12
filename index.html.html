@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Perdón amor 💖</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffe6eb;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        h1 {
+            color: #d6336c;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            margin: 15px;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        #si {
+            background-color: #28a745;
+            color: white;
+        }
+
+        #no {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        #mensaje {
+            margin-top: 30px;
+            font-size: 22px;
+            color: #6f1d1b;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 id="titulo">Amor 💕 ¿Me perdonas?</h1>
+
+    <button id="si" onclick="dijoSi()">Sí 💖</button>
+    <button id="no" onclick="dijoNo()">No 😠</button>
+
+    <p id="mensaje"></p>
+
+    <script>
+        let tamañoSi = 18;
+        let intentos = 0;
+
+        const frases = [
+            "Ándale amor 😢",
+            "Prometo cambiar 🥺",
+            "No seas así 💔",
+            "Mira qué bonito botón verde 💚",
+            "Ya casi dices que sí 😅"
+        ];
+
+        function dijoNo() {
+            // Agrandar el botón SÍ
+            tamañoSi += 6;
+            document.getElementById("si").style.fontSize = tamañoSi + "px";
+            document.getElementById("si").style.padding = (tamañoSi / 2) + "px";
+
+            // Cambiar mensaje rogando
+            document.getElementById("mensaje").innerText =
+                frases[intentos % frases.length];
+
+            intentos++;
+        }
+
+        function dijoSi() {
+            document.getElementById("titulo").innerText = "Lo sabía 😌💖";
+            document.getElementById("mensaje").innerText = "Gracias amor 💕";
+            document.getElementById("no").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
+
